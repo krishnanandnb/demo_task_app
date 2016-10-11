@@ -1,0 +1,27 @@
+<% provide(:title, 'Create task') %>
+<h1>Create Task</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@task) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.label :priority %>
+      <%= f.select :priority, ['1', '2','3','4','5']%>
+<!-- 
+      <%= f.label :status %>
+      <%= f.text_field :status %> -->
+
+      <%= f.label :deadline %>
+      <%= f.date_select :deadline %>
+
+      <%= f.label :reminder %>
+      <%= f.datetime_select :reminder %>
+
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<% provide(:title, 'All tasks') %>
+<h1>All open tasks</h1>
+
+<%= will_paginate %>
+<ul class="tasks">
+  <%= render @tasks %>
+</ul>
+
+<%= will_paginate %>

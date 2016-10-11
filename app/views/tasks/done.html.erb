@@ -1,0 +1,14 @@
+<% provide(:title, 'All tasks') %>
+<h1>All done tasks</h1>
+
+<%= will_paginate %>
+<ul class="tasks">
+ <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.description, task %>
+      | <%= link_to "Re-open", toggle_status_path(:id=> task.id, :status=> 1) %>
+      | <%= link_to "Archive", toggle_status_path(:id=> task.id, :status=> 3) %>
+    </li>
+  <% end %>
+
+<%= will_paginate %>

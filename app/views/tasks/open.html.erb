@@ -1,0 +1,20 @@
+<% provide(:title, 'All tasks') %>
+<h1>All open tasks</h1>
+<%= will_paginate %>
+<table class="table table-striped">
+  <tr>
+    <th><%= link_to "Description", open_path(:sort => "description" )%></th>
+    <th><%= link_to "deadline" , open_path( :sort => "deadline") %></th>
+    <th><%= link_to "priority" , open_path(:sort => "priority" ) %></th>
+  </tr>
+  <% for task in @tasks %>
+  <tr>
+    <td><%= task.description %></td>
+    <td><%= task.deadline %></td>
+    <td><%= task.priority %></td>
+    <td> <%= link_to "Mark done", toggle_status_path(:id=> task.id, :status=> 2) %> </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate %>

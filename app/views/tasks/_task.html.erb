@@ -1,0 +1,6 @@
+<li>
+  <%= link_to task.description, task %>
+  | <%= task.priority %>
+  | <%= task.deadline %>
+   | <%= link_to "Mark done", toggle_status_path(:id=> task.id, :status=> 2) %>
+</li>
